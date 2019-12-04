@@ -9,8 +9,11 @@ const connect = () => {
   client.setEncoding("utf8");
 
   client.on("connect", () => {
-    console.log("you're in");
+    console.log("You're in the game!");
     client.write("Name: AAR");
+    // client.write("Move: down");
+    // client.write("Move: left");
+    // client.write("Move: up");
   });
 
   client.on("data", data => {
