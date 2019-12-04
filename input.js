@@ -20,7 +20,9 @@ const handleUserInput = key => {
     w: "Move: up",
     a: "Move: left",
     s: "Move: down",
-    d: "Move: right"
+    d: "Move: right",
+    q: "Say: EAT IT",
+    e: "Say: I WIN"
   };
 
   if (key === "\u0003") {
