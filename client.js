@@ -1,4 +1,28 @@
 const net = require("net");
+const stdin = require("process").stdin;
+
+const setupInput = () => {
+  const stdin = process.stdin;
+  stdin.setRawMode(true);
+  stdin.setEncoding("utf8");
+  stdin.resume();
+
+  stdin.on("data", key => {
+    handleUserInput(key);
+  });
+
+  return stdin;
+};
+
+setupInput();
+
+const handleUserInput = key => {
+  if (key === "\u0003") {
+    console.log("I'm outty");
+    process.exit();
+  }
+  //else if( ) {}
+};
 
 const connect = () => {
   const client = net.createConnection({
