@@ -1,4 +1,7 @@
-const setupInput = () => {
+let connection;
+
+const setupInput = client => {
+  connection = client;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -13,11 +16,20 @@ const setupInput = () => {
 };
 
 const handleUserInput = key => {
+  const binding = {
+    w: "Move: up",
+    a: "Move: left",
+    s: "Move: down",
+    d: "Move: right"
+  };
+
   if (key === "\u0003") {
     console.log("I'm outty");
     process.exit();
   }
-  //else if( ) {}
+  if (binding[key]) {
+    connection.write(binding[key]);
+  }
 };
 
 module.exports = { setupInput };

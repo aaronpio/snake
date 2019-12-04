@@ -11,13 +11,6 @@ const connect = () => {
   client.on("connect", () => {
     console.log("You're in the game!");
     client.write("Name: AAR");
-    // client.write("Move: down");
-    // client.write("Move: left");
-    // client.write("Move: up");
-  });
-
-  client.on("data", data => {
-    console.log(data);
   });
 
   return client;
